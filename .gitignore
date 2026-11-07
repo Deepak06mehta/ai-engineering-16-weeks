@@ -1,0 +1,24 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+
+# Data and weights — NEVER commit these
+data/raw/
+data/processed/
+models/
+adapters/
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+
+# OS
+.DS_Store

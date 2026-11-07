@@ -1,0 +1,25 @@
+[project]
+name = "ai-engineering-16-weeks"
+version = "0.1.0"
+description = "16-week AI Engineer programme: from-scratch LLM components, RAG, agents, fine-tuning, deployment."
+requires-python = ">=3.12,<3.14"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]           # line length is handled by the formatter
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "exercise: a test for work you have not done yet (run with `make exercises`)",
+    "needs_torch: requires PyTorch to be installed",
+    "needs_services: requires docker compose services to be up",
+]
+# Exercise tests are RED until you implement them — that is the point.
+# They are deselected by default so `make test` stays green as a scaffold check.
+addopts = "-q -m 'not exercise'"

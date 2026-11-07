@@ -1,0 +1,9 @@
+# Weeks 1-6 — foundations, attention, MoE, KV cache
+torch
+numpy
+matplotlib
+jupyterlab
+ipykernel
+rich
+pytest
+ruff

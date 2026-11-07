@@ -1,0 +1,13 @@
+# Weeks 7-8 — Hugging Face, inference, fine-tuning
+-r core.txt
+transformers
+tokenizers
+datasets
+accelerate
+safetensors
+sentencepiece
+peft
+trl
+# bitsandbytes is CUDA-only: QLoRA will NOT run on Apple Silicon.
+# See the vault note "Cloud GPU Escape Hatch".
+bitsandbytes ; sys_platform != "darwin"
