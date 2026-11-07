@@ -6,6 +6,10 @@ __pycache__/
 .ruff_cache/
 .ipynb_checkpoints/
 
+# uv writes this when you use `uv run --with ...`; the project pins deps in
+# requirements/*.txt instead, so keep it out of the repo.
+uv.lock
+
 # Secrets
 .env
 
