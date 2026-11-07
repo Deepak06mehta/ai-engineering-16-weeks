@@ -77,12 +77,13 @@ def main() -> int:
     if have("ollama"):
         out = version_of("ollama", "list")
         tags = subprocess.run(["ollama", "list"], capture_output=True, text=True).stdout
-        for want in ("qwen3", "llama3.2", "nomic-embed-text"):
+        for want, tag in (("qwen3", "qwen3:4b"), ("llama3.2", "llama3.2:3b"),
+                          ("nomic-embed-text", "nomic-embed-text")):
             if want in tags:
-                row(want, OK)
+                row(tag, OK)
             else:
-                row(want, BAD, f"ollama pull {want}")
-                missing.append(f"ollama pull {want}")
+                row(tag, BAD, f"ollama pull {tag}")
+                missing.append(f"ollama pull {tag}")
         del out
     else:
         row("(skipped)", WARN, "ollama not installed")
